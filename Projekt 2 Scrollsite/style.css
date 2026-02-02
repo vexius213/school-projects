@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scrollbar-color: #333 #222;
+}
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #111;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #777;
+}
+
+.section {
+    min-height: 100vh;
+    padding: 100px 60px;
+}
+
+.content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Bild storlek */
+.content img {
+    width: 600px;
+}
+
+/* Hem Sektion */
+#home {
+    background: #222;
+    color: white;
+}
+
+/* Om oss Sektion */
+#about {
+    background: #777;
+    color: black;
+}
+
+/* Kontakt Sektion */
+#contact {
+    background: #333;
+    color: white;
+}

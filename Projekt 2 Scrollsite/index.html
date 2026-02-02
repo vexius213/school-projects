@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scrollsida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Detta är Navigationen -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Detta är Hem Sektionen -->
+    <section id="home" class="section">
+        <div class="content">
+            <div class="text">
+                <h1>Home</h1>
+                <p>
+                    Cars represent freedom, engineering, and personal style. From daily drivers to high-performance machines,
+                    every car is built with a purpose. Design, power, handling, and technology come together to create an
+                    experience that goes far beyond simple transportation.
+                </p>
+            </div>
+            <img src="car.jpg" alt="Car Image">
+        </div>
+    </section>
+
+    <!-- Detta är om oss Sektionen -->
+    <section id="about" class="section">
+        <div class="content">
+            <div class="text">
+                <h1>About us</h1>
+                <p>
+                    Automotive engineering focuses on precision and reliability. Engines, suspensions, braking systems,
+                    and aerodynamics are carefully designed to balance performance and safety. Continuous innovation
+                    drives the industry forward, improving efficiency, speed, and driver control.
+                </p>
+            </div>
+            <img src="car2.jpg" alt="Car Image">
+        </div>
+    </section>
+
+    <!-- Detta är Kontakt Sektionen -->
+    <section id="contact" class="section">
+        <div class="content">
+            <div class="text">
+                <h1>Contact</h1>
+                <p>If you are interested in buying anything from us, email us at cars@gmail.com</p>
+				<p>Or you can call us at: 0721571295</p>
+            </div>
+        </div>
+    </section>
+
+    <!--Detta är Javascript för smooth scrolling hjälp av chat gpt för scroll behaviour funkade ej-->
+<script>
+const links = document.querySelectorAll('nav a');
+
+links.forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+
+        const targetId = link.getAttribute('href');
+        const target = document.querySelector(targetId);
+
+        smoothScrollTo(target.offsetTop - 80, 800);
+    });
+});
+
+function smoothScrollTo(targetPosition, duration) {
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOut(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function easeInOut(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+body {
+    background-color: beige;
+}
+
+.info {
+    color: blue;
+}
+
+#markering {
+    font-style: italic;
+    color: orange;
+}

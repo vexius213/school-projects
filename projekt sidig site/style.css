@@ -1,0 +1,61 @@
+body {
+    background-color: #4753D7;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Titel */
+.title {
+    background: white;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Meny */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+}
+
+.menu a {
+    background: white;
+    border: 2px solid black;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+/* Bild + text bredvid */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.content img {
+    width: 400px;
+    border: 3px solid white;
+    border-radius: 5px;
+}
+
+/* Text till höger om bilden */
+.text-right {
+    max-width: 350px;
+    color: white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    margin-top: 40px;
+}
